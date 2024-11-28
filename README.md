@@ -1,4 +1,4 @@
-# Template Vite + SCSS + JS vanilla
+# Template: Vite + SCSS + JS vanilla 
 
 ## Description
 
