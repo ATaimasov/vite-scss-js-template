@@ -1,0 +1,9 @@
+@use 'normalize.css'; //reset styles
+
+// base
+@use '@base/base';
+
+// components
+@use '@scss-components/TheHeader';
+@use '@scss-components/TheMain';
+@use '@scss-components/TheFooter';

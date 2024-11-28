@@ -1,0 +1,13 @@
+@use "sass:math";
+
+// Removes units from values. This allows us to perform mathematical operations on numbers without units.
+@function strip-unit($value) {
+    @return math.div($value, $value * 0 + 1);
+}
+
+
+
+
+
+
+

@@ -1,0 +1,100 @@
+@use '@styles/global' as *;
+@use "sass:color";
+
+html {
+    font-family: 'Montserrat';
+    font-style : normal;
+    @include mf-bp-rem('font-size', (
+        xs: $font-size-html * 0.8,
+        sm: $font-size-html * 0.9,
+        xl: $font-size-html,
+    ));
+}
+
+// grid 3 rows start
+.body {
+    &--grid {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 100%;
+        justify-items: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+}
+.footer,
+.header,
+.main {
+    &--grid {
+        min-width: 100%;
+    }
+}
+// grid 3 rows end
+
+// copyright 
+.footer,
+.header {
+    background-color: $color-main;
+
+    &-copyright {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        @include mf-bp-rem('padding', (
+            xs: 16px,
+        ));
+
+        &__logo {
+            @include mf-bp-rem('width', (
+                xs: 163px,
+            ));
+            @include mf-bp-rem('height', (
+                xs: 32px,
+            ));
+        }
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+::selection {
+    background: color.adjust($color-main, $lightness: -20%);
+    text-shadow: none;
+    color: white;
+}
+
+.link {
+    text-decoration: none;
+    transition: opacity $animation-duration $animation, color $animation-duration $animation;
+    cursor: pointer;
+
+    &.link--active {
+        color      : $color-link-active;
+    }
+
+    &:is(:focus-visible, :hover) {
+        opacity: 0.8;
+        outline: none;
+    }
+}
+
+.icon {
+    fill      : currentColor;
+    transition: fill $animation-duration $animation;
+
+    &:hover {
+        fill: currentColor;
+    }
+
+    &--active {
+        fill: $color-link-active;
+    }
+}

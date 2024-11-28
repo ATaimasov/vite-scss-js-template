@@ -1,0 +1,41 @@
+// global import
+// @use '@styles/global' as *;
+
+// local import 
+// @use '@abstracts/mixins/properties/mf-breakpoints-mixins' as *;
+
+
+.example {
+        // brief instruction
+
+        // 1.1
+        // common use of adaptive value | list of breakpoints in mf-breakpoints-mixins.scss
+    @include mf-bp-rem('font-size', (
+        xs: $font-size-html * 0.8,
+        sm: $font-size-html * 0.9,
+        xl: $font-size-html,
+    ));
+
+        // 1.2
+        // concise syntax (work only in order of map keys of breakpoints)
+    @include mf-bp-rem('font-size', brief-bp($font-size-html * 0.8, $font-size-html * 0.9, $font-size-html));
+      // it is apply styles for breakpoints: xs, sm, md
+
+        // 1.3
+        // you can use syntax from 1.1 and 1.2 but without converting values to rem. just remove '-rem'
+    @include mf-bp('font-size', brief-bp($font-size-html * 0.8, $font-size-html * 0.9, $font-size-html));
+
+        // 2.1
+        // in case when you have only 3 breakpoints: mobile, tablet, desktop
+        // you can you this mixin
+    @include mtd-bp-rem('font-size', $font-size-html, $font-size-html * 0.9, $font-size-html * 0.8);
+
+       // 2.2
+       // it is also support 'non rem'
+    @include mtd-bp('font-size', $font-size-html, $font-size-html * 0.9, $font-size-html * 0.8);
+
+        // 2.3
+        // this mixin also can be used with only one value or two values (mobile, desktop)
+        // using for one value have sense when you need fast convert px to rem
+    @include mtd-bp-rem('font-size', $font-size-html);
+}
