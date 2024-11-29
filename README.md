@@ -1,4 +1,4 @@
-# Template: Vite + SCSS + JS vanilla 
+# Template: Vite + SCSS + JS
 
 ## Description
 
@@ -34,17 +34,17 @@ it's global styles. you just need it to import into each style file with these:
 	- breakpoint (mobile-first prefer)  with/without px-to-rem convertation (you also can use px-to-rem function separately if you want)
 	- counting average tablet values if you have only for mobile and desktop (works correctly with px)
  
- how to use mixins you can find into instruction.scss into styles folder
+ About how to use mixins you can find in the instruction.scss in the styles folder
 
 #### What about the layout?
 
-- it have three main components: 
+- it's have three main components: 
 	- header
 	- main
 	- footer
 - parent of these (body) has grid-layout
 - all of these three has 100% width of  body. you need to use paddings/margins with containers to get desired result
-- BEM methodology
+- styles based on BEM methodology
 
 ## Support
 
