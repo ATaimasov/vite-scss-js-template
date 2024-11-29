@@ -1,9 +1,10 @@
 @use '@styles/global' as *;
 @use "sass:color";
 
-html {
-    font-family: 'Montserrat';
+.html {
+    font-family: 'Montserrat', Arial, sans-serif;
     font-style : normal;
+    line-height: 20px;
     @include mf-bp-rem('font-size', (
         xs: $font-size-html * 0.8,
         sm: $font-size-html * 0.9,
@@ -31,38 +32,12 @@ html {
 }
 // grid 3 rows end
 
-// copyright 
-.footer,
-.header {
-    background-color: $color-main;
-
-    &-copyright {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-
-        @include mf-bp-rem('padding', (
-            xs: 16px,
-        ));
-
-        &__logo {
-            @include mf-bp-rem('width', (
-                xs: 163px,
-            ));
-            @include mf-bp-rem('height', (
-                xs: 32px,
-            ));
-        }
-    }
-}
-
-img {
+.img {
     max-width: 100%;
 }
 
-.no-scroll {
-    overflow: hidden;
+.logo {
+    line-height: 0;
 }
 
 ::selection {

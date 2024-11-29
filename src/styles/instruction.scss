@@ -5,8 +5,7 @@
 // @use '@abstracts/mixins/properties/mf-breakpoints-mixins' as *;
 
 
-.example {
-        // brief instruction
+.instruction-with-examples {
 
         // 1.1
         // common use of adaptive value | list of breakpoints in mf-breakpoints-mixins.scss
@@ -14,6 +13,19 @@
         xs: $font-size-html * 0.8,
         sm: $font-size-html * 0.9,
         xl: $font-size-html,
+    ));
+
+        // using with many values
+    @include mf-bp-rem('padding', (
+        xs: (5px 10px),
+        sm: (10px 15px),
+        xl: (15px 20px),
+    ));
+
+        // using for not only change values
+    @include mf-bp('display', (
+        xs: none,
+        lg: flex,
     ));
 
         // 1.2
@@ -38,4 +50,23 @@
         // this mixin also can be used with only one value or two values (mobile, desktop)
         // using for one value have sense when you need fast convert px to rem
     @include mtd-bp-rem('font-size', $font-size-html);
+
+
+        // 3
+        // you can calculate average value with this function
+    font-size: avg(40px, 70px); // 55px
+
+        //3.1
+        // you can combine previous mentioned mixins with this function
+    @include mf-bp-rem('font-size', (
+        xs: 40px,              // font-size: 2.5rem;
+        md: avg(40px, 70px),   // font-size: 3.4375rem;
+        lg: 70px,              // font-size: 4.375rem;
+    ));
+
+    @include mf-bp('padding', (
+        xs: 60px 5px,
+        md: (avg(60px, 112px) avg(5px, 10px)), // 86px 7.5px
+        lg: 112px 10px,
+    ));
 }

@@ -27,7 +27,9 @@ $breakpoints: (
       }
 
       @if $breakpoint == "xs" {
-        #{$property}: $value;
+        & {
+          #{$property}: $value;
+        }
       } @else {
         @media screen and (min-width: map.get($breakpoints, $breakpoint)) {
           #{$property}: $value;
@@ -51,7 +53,9 @@ $breakpoints: (
       }
 
       @if $breakpoint == "xs" {
-        #{$property}: process-values-rem($value);
+        & {
+          #{$property}: process-values-rem($value);
+        }
       } @else {
         @media screen and (min-width: map.get($breakpoints, $breakpoint)) {
           #{$property}: process-values-rem($value);

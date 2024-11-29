@@ -38,7 +38,8 @@
         }
         // Handle non-numeric values
         @else {
-            @warn "Value #{$value} is not a number";
+            // @warn "Value #{$value} is not a number";
+            // uncomment to get warnings if you need check units for non-numeric values
             $converted-value: $value;
         }
 
