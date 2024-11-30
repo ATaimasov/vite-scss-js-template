@@ -18,23 +18,23 @@
 
 #### Organisation of styles
 
-- the necessary files for the styles are organised in the appropriate folders
-- Each abstract folder subfolder has a common build file (it is without underscore)
+- the necessary files for the styles are placed in the appropriate folders
 - global.scss - styles from the previous item are collected into the file. 
-
-it's global styles. you just need it to import into each style file with these: 
-`@use '@styles/global' as *;`
-
-- you can import mixins, variables, etc into components also locally
+- each abstract folder (containing variables, mixins, functions) has a subfolder that contains a generic build file (it is without underscored)
+- internal functions that are used only in other functions and utilities are located in abstract/utils
 
 #### Using abilities of SCSS
 
 - variables: screen size, font size, colours, etc.
 - mixins:
-	- breakpoint (mobile-first prefer)  with/without px-to-rem convertation (you also can use px-to-rem function separately if you want)
+	- breakpoints (mobile-first prefer) with/without px-to-rem conversion
 	- counting average tablet values if you have only for mobile and desktop (works correctly with px)
- 
- About how to use mixins you can find in the instruction.scss in the styles folder
+ - functions:
+	- find average value between two units
+	- px-to-rem conversion (separately from breakpoints mixins)
+	- hex-to-rgb/hex-to-rgba conversion
+
+ More about it you can find in the **<a href="src/styles/.INSTRUCTION.scss">.INSTRUCTION.scss</a>** in the styles folder
 
 #### What about the layout?
 

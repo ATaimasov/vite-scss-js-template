@@ -1,5 +1,5 @@
 @use "sass:math";
-@use "strip-unit-function" as *;
+@use "@scss-functions/utils/strip-unit" as *;
 
 @function avg($value1, $value2) {
   $unit1: math.unit($value1);

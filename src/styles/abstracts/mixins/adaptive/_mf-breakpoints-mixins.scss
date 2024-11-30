@@ -3,7 +3,7 @@
 @use "sass:meta";
 
 @use '@abstracts/variables/variables' as shared;
-@use '@abstracts/functions/is-list-function' as *;
+@use '@scss-functions/utils/convert-to-list' as *;
 
 $breakpoints: (
   xs : shared.$screen-xs,
@@ -54,11 +54,11 @@ $breakpoints: (
 
       @if $breakpoint == "xs" {
         & {
-          #{$property}: process-values-rem($value);
+          #{$property}: convert-to-list-rem($value);
         }
       } @else {
         @media screen and (min-width: map.get($breakpoints, $breakpoint)) {
-          #{$property}: process-values-rem($value);
+          #{$property}: convert-to-list-rem($value);
         }
       }
     }
@@ -71,18 +71,18 @@ $breakpoints: (
   //   $max: if(list.length($values) >= 3, list.nth($values, 3), null);
 
   //   @if $min != null {
-  //     #{$property}: process-values-rem($min);
+  //     #{$property}: convert-to-list-rem($min);
   //   }
 
   //   @if $medium != null {
   //     @media screen and (min-width: shared.$screen-md) {
-  //       #{$property}: process-values-rem($medium);
+  //       #{$property}: convert-to-list-rem($medium);
   //     }
   //   }
 
   //   @if $max != null {
   //     @media screen and (min-width: shared.$screen-xl) {
-  //       #{$property}: process-values-rem($max);
+  //       #{$property}: convert-to-list-rem($max);
   //     }
   //   }
   // }

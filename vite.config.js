@@ -55,8 +55,10 @@ export default defineConfig({
                   // styles
       '@styles'           : createAlias('src/styles'),
       '@abstracts'        : createAlias('src/styles/abstracts'),
+      '@scss-functions': createAlias('src/styles/abstracts/functions'),
       '@scss-components': createAlias('src/styles/components'),
       '@base': createAlias('src/styles/base'),
+      
 
                   // components
       '@components': createAlias('src/components'),
