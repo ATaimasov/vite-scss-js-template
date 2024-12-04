@@ -4,7 +4,7 @@
 .html {
     font-family: 'Montserrat', Arial, sans-serif;
     font-style : normal;
-    line-height: 20px;
+    line-height: 1.2em;
     @include mf-bp-rem('font-size', (
         xs: $font-size-html * 0.8,
         sm: $font-size-html * 0.9,
@@ -27,17 +27,19 @@
 .header,
 .main {
     &--grid {
-        min-width: 100%;
+        width: 100%;
     }
 }
 // grid 3 rows end
 
 .img {
     max-width: 100%;
+    height: auto;
 }
 
 .logo {
     line-height: 0;
+    user-select: none;
 }
 
 ::selection {

@@ -29,7 +29,7 @@ export default defineConfig({
   ViteImageOptimizer({
     exclude: /^sprite.svg$/,   // if you need to exclude favicons: ['apple-touch-icon.png', 'web-app-manifest-192x192.png', 'web-app-manifest-512x512.png', 'favicon-48x48.png', 'favicon.svg']
     png    : {
-      quality: 60,
+      quality: 90,
     },
     jpeg: {
       quality: 60,

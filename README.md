@@ -28,11 +28,12 @@
 - variables: screen size, font size, colours, etc.
 - mixins:
 	- breakpoints (mobile-first prefer) with/without px-to-rem conversion
-	- counting average tablet values if you have only for mobile and desktop (works correctly with px)
+	- counting average tablet values with calc function if you have only for mobile and desktop (works correctly with px)
+	- counting average values with calc functions depending on many values 
  - functions:
 	- find average value between two units
-	- px-to-rem conversion (separately from breakpoints mixins)
-	- hex-to-rgb/hex-to-rgba conversion
+	- values conversion functions (px to rem, px to percents)
+	- colors conversion (hex-to-rgb/hex-to-rgba)
 
  More about it you can find in the **<a href="src/styles/.INSTRUCTION.scss">.INSTRUCTION.scss</a>** in the styles folder
 

@@ -241,9 +241,10 @@ html {
 
 
 // need alternatives if you want to disable outline on focus
+// will work in contrast mode in any case
 // :focus,
 // a:active,
 // a:hover {
-//     outline: 0
+//     outline: transparent;
 // }
 

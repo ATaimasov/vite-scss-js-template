@@ -1,10 +1,9 @@
 // base
-// @use '@base/fonts';
-@use '@base/base';
+@use '@base/fonts';
 @use '@base/reset';
+@use '@base/base';
 
 // components
 @use '@scss-components/TheHeader';
 @use '@scss-components/TheMain';
 @use '@scss-components/TheFooter';
-@use '@scss-components/copyrights';

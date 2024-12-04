@@ -6,3 +6,11 @@ $screen-lg : 992px;
 $screen-xl : 1200px;
 $screen-xxl: 1600px;
 
+$breakpoints: (
+  xs : $screen-xs,
+  sm : $screen-sm,
+  md : $screen-md,
+  lg : $screen-lg,
+  xl : $screen-xl,
+  xxl: $screen-xxl
+);

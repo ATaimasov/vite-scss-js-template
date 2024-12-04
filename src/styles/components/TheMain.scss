@@ -11,5 +11,7 @@
     ));
     @include mf-bp-rem('gap', (
         xs: 10px,
+        md: avg(10px, 20px),
+        xl: 20px
     ));
 }
