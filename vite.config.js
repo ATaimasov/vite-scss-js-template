@@ -12,6 +12,10 @@ function createAlias(relativePath) {
 }
 
 export default defineConfig({
+  server: {
+    host: '0.0.0.0',
+    port: 4444,
+  },
   build: {
     minify       : 'esbuild',
     cssMinify    : 'lightningcss',   // if there is any conflicts just remove it (but it's very fast)
@@ -53,11 +57,13 @@ export default defineConfig({
       '@scripts': createAlias('src/scripts'),
 
                   // styles
-      '@styles'           : createAlias('src/styles'),
-      '@abstracts'        : createAlias('src/styles/abstracts'),
-      '@scss-functions': createAlias('src/styles/abstracts/functions'),
+      '@styles'         : createAlias('src/styles'),
+      '@abstracts'      : createAlias('src/styles/abstracts'),
+      '@scss-functions' : createAlias('src/styles/abstracts/functions'),
       '@scss-components': createAlias('src/styles/components'),
-      '@base': createAlias('src/styles/base'),
+      '@scss-blocks'    : createAlias('src/styles/components/blocks/'),
+      '@scss-ui'        : createAlias('src/styles/components/ui/'),
+      '@base'           : createAlias('src/styles/base'),
       
 
                   // components

@@ -10,9 +10,6 @@
   },
   "author": "Alexander Taimasov",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ATaimasov/vite-scss-vanilla-template/issues"
-  },
   "devDependencies": {
     "lightningcss": "^1.28.2",
     "sass": "^1.81.0",

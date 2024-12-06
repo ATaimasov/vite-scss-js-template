@@ -4,6 +4,6 @@
 @use '@base/base';
 
 // components
-@use '@scss-components/TheHeader';
-@use '@scss-components/TheMain';
-@use '@scss-components/TheFooter';
+@use '@scss-components/_root/TheHeader';
+@use '@scss-components/_root/TheMain';
+@use '@scss-components/_root/TheFooter';
