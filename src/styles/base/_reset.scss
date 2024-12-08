@@ -104,6 +104,13 @@ select {
     text-transform: none
 }
 
+button, 
+input, 
+textarea,
+select {
+    font-family: inherit;
+}
+
 button,
 html input[type=button],
 input[type=reset],

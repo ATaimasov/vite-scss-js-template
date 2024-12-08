@@ -1,8 +1,11 @@
 @use '@styles/global' as *;
 @use "sass:color";
 
-.html {
+html {
     font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.html {
     font-style : normal;
     line-height: 1.2em;
     @include mf-bp-rem('font-size', (
@@ -64,14 +67,33 @@
 }
 
 .icon {
-    fill      : currentColor;
+    fill      : white;
     transition: fill $animation-duration $animation;
 
+    @include mf-bp-rem('width', (
+        xs: 24px,
+        md: 36px,
+    ));
+    @include mf-bp-rem('height', (
+            xs: 24px,
+            md: 36px,
+    ));
+
     &:hover {
-        fill: currentColor;
+        fill: $color-link-hover;
     }
 
     &--active {
         fill: $color-link-active;
+    }
+
+    svg {
+        transition: all $animation-duration $animation;
+        fill: сurrentColor;
+        
+
+        &:hover {
+            opacity: $opacity-hover;
+        }
     }
 }
