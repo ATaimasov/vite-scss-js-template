@@ -1,5 +1,13 @@
+// abstracts
 @use '@styles/global' as *;
 @use "sass:color";
+
+// root styles
+@use '@base/fonts';
+@use '@base/reset';
+
+// common components
+@use '@scss-ui/copyrights';
 
 html {
     font-family: 'Montserrat', Arial, sans-serif;
@@ -35,6 +43,30 @@ html {
 }
 // grid 3 rows end
 
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include mf-bp-rem('margin', (
+        xs: 15px,
+    ));
+    @include mf-bp-rem('gap', (
+        xs: 10px,
+        md: avg(10px, 20px),
+        xl: 20px
+    ));
+}
+
+
+// custom properties start
+.footer {
+    background-color: $color-main;
+}
+.header {
+    background-color: $color-main;
+}
+
 .img {
     max-width: 100%;
     height: auto;
@@ -45,24 +77,14 @@ html {
     user-select: none;
 }
 
-::selection {
-    background: color.adjust($color-main, $lightness: -20%);
-    text-shadow: none;
-    color: white;
-}
-
 .link {
     text-decoration: none;
-    transition: opacity $animation-duration $animation, color $animation-duration $animation;
     cursor: pointer;
-
-    &.link--active {
-        color      : $color-link-active;
-    }
+    transition: opacity $animation-duration $animation;
 
     &:is(:focus-visible, :hover) {
-        opacity: 0.8;
         outline: none;
+        opacity: $opacity-hover;
     }
 }
 
@@ -83,10 +105,6 @@ html {
         fill: $color-link-hover;
     }
 
-    &--active {
-        fill: $color-link-active;
-    }
-
     svg {
         transition: all $animation-duration $animation;
         fill: сurrentColor;
@@ -97,3 +115,13 @@ html {
         }
     }
 }
+
+::selection {
+    background: color.adjust($color-main, $lightness: -20%);
+    text-shadow: none;
+    color: white;
+}
+
+
+
+

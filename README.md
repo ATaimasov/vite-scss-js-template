@@ -35,7 +35,7 @@
 	- values conversion functions (px to rem, px to percents)
 	- colors conversion (hex-to-rgb/hex-to-rgba)
 
- More about it you can find in the **<a href="src/styles/.INSTRUCTION.scss">.INSTRUCTION.scss</a>** in the styles folder
+ More about it you can find in the **<a href="src/styles/_INSTRUCTION.scss">_INSTRUCTION.scss</a>** in the styles folder
 
 #### What about the layout?
 
