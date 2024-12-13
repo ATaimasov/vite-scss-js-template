@@ -11,6 +11,8 @@
 
 html {
     font-family: 'Montserrat', Arial, sans-serif;
+    scrollbar-color: hex-to-rgba($color-main, 0.9) color.adjust(white, $lightness: -10%);
+    scrollbar-width: thin;
 }
 
 .html {
