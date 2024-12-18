@@ -5,9 +5,8 @@
 // root styles
 @use '@base/fonts';
 @use '@base/reset';
-
-// common components
-@use '@scss-ui/copyrights';
+@use '@base/animation';
+@use '@base/state';
 
 html {
     font-family: 'Montserrat', Arial, sans-serif;
@@ -58,15 +57,6 @@ html {
         md: avg(10px, 20px),
         xl: 20px
     ));
-}
-
-
-// custom properties start
-.footer {
-    background-color: $color-main;
-}
-.header {
-    background-color: $color-main;
 }
 
 .img {
