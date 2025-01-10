@@ -1,0 +1,9 @@
+@use '@abstracts/variables/variables' as *;
+
+@mixin hover {
+    transition: opacity $animation-duration $animation;
+
+    &:hover {
+        opacity: $opacity-hover;
+    }
+}

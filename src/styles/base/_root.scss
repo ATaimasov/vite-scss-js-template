@@ -49,7 +49,7 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    @include mf-bp-rem('margin', (
+    @include mf-bp-rem('padding', (
         xs: 15px,
     ));
     @include mf-bp-rem('gap', (
@@ -113,6 +113,13 @@ html {
     text-shadow: none;
     color: white;
 }
+
+.btn {
+    cursor: pointer;
+    user-select: none;
+    @include hover-opacity;
+}
+
 
 
 
