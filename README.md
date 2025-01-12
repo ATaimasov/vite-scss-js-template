@@ -19,9 +19,12 @@
 #### Organisation of styles
 
 - the necessary files for the styles are placed in the appropriate folders
-- global.scss - styles from the previous item are collected into the file. 
-- each abstract folder (containing variables, mixins, functions) has a subfolder that contains a generic build file (it is without underscored)
 - internal functions that are used only in other functions and utilities are located in abstract/utils
+- each abstract folder (containing variables, mixins, functions) has a subfolder that contains a generic build file (it is without underscored: varibables.scss, mixins.scss, functios.scss). if you need to add a new mixin, function, variable for global use, just add it to one of generic build file
+
+##### How to use it
+- global.scss -  might of the scss are collected into the file. use in components styles (hero.scss, copyrights.scss, etc). 
+- base.scss - all styles that you need for every page including global. use in pages styles (main.scss, contacts.scss, reviews.scss, etc). 
 
 #### Using abilities of SCSS
 
@@ -44,7 +47,7 @@
 	- main
 	- footer
 - parent of these (body) has grid-layout
-- all of these three has 100% width of  body. you need to use paddings/margins with containers to get desired result
+- all of these three has 100% width of body. you need to use paddings/margins with containers to get desired result
 - styles based on BEM methodology
 
 ## Support

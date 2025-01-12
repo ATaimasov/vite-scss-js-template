@@ -2,12 +2,12 @@ import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
 import { resolve } from 'path'  // for rollup multi-page
 
-import injectHTML from 'vite-plugin-html-inject';                  // component approach in html 
+import injectHTML from 'vite-plugin-html-inject';                  // component approach in html
 import { ViteMinifyPlugin } from 'vite-plugin-minify';             // minify html in build
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';  // optimize images requires plugins svgo and sharp
 import FullReload from 'vite-plugin-full-reload'                   // auto reload on changes
 
-function createAlias(relativePath) {
+function makeAlias(relativePath) {
   return fileURLToPath(new URL(relativePath, import.meta.url))
 }
 
@@ -22,13 +22,13 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-              // add pages here if it's no SPA  
+              // add pages here if it's no SPA
               // about: resolve(__dirname, 'about.html'),
       }
     },
   },
-  plugins: [ 
-  injectHTML(), 
+  plugins: [
+  injectHTML(),
   FullReload(['./scr/**/*']),
   ViteImageOptimizer({
     exclude: /^sprite.svg$/,   // if you need to exclude favicons: ['apple-touch-icon.png', 'web-app-manifest-192x192.png', 'web-app-manifest-512x512.png', 'favicon-48x48.png', 'favicon.svg']
@@ -53,30 +53,28 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@'       : createAlias('src'),
-      '@scripts': createAlias('src/scripts'),
+      '@'       : makeAlias('src'),
+      '@scripts': makeAlias('src/scripts'),
 
                   // styles
-      '@styles'         : createAlias('src/styles'),
-      '@abstracts'      : createAlias('src/styles/abstracts'),
-      '@scss-functions' : createAlias('src/styles/abstracts/functions'),
-      '@scss-components': createAlias('src/styles/components'),
-      '@scss-blocks'    : createAlias('src/styles/components/blocks/'),
-      '@scss-ui'        : createAlias('src/styles/components/ui/'),
-      '@base'           : createAlias('src/styles/base'),
-      
+      '@styles'         : makeAlias('src/styles'),
+      '@abstracts'      : makeAlias('src/styles/abstracts'),
+      '@scss-functions' : makeAlias('src/styles/abstracts/functions'),
+      '@scss-components': makeAlias('src/styles/components'),
+      '@scss-ui'        : makeAlias('src/styles/components/ui/'),
+      '@base'           : makeAlias('src/styles/base'),
 
                   // components
-      '@components': createAlias('src/components'),
-                  // '@molecules': createAlias('./src/components/molecules'),
-                  // '@organisms': createAlias('./src/components/organisms'),
-                  // '@templates': createAlias('./src/components/templates'),
+      '@components': makeAlias('src/components'),
+                  // '@molecules': makeAlias('./src/components/molecules'),
+                  // '@organisms': makeAlias('./src/components/organisms'),
+                  // '@templates': makeAlias('./src/components/templates'),
 
                   // assets
-      '@assets': createAlias('src/assets'),
-      '@images': createAlias('src/assets/images'),
-      '@fonts' : createAlias('src/assets/fonts'),
-      '@svg'   : createAlias('src/assets/svg'),
+      '@assets': makeAlias('src/assets'),
+      '@images': makeAlias('src/assets/images'),
+      '@fonts' : makeAlias('src/assets/fonts'),
+      '@svg'   : makeAlias('src/assets/svg'),
 
     },
   },

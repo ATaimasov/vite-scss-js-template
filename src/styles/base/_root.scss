@@ -6,23 +6,37 @@
 @use '@base/fonts';
 @use '@base/reset';
 @use '@base/animation';
-@use '@base/state';
 
-html {
-    font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
-}
+//fix "jumping" content when the scrollbar appears or is hidden.
+// .html, .body {
+//   scrollbar-gutter: stable;
+// }
 
 .html {
+    font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
     font-style : normal;
     line-height: 1.2em;
-    scrollbar-color: hex-to-rgba($color-primary-1, 0.9) color.adjust(white, $lightness: -10%);
+    color: $color-text-primary;
+    scrollbar-color: hex-to-rgba($color-primary, 0.9) color.adjust(white, $lightness: -10%);
     scrollbar-width: thin;
+    scroll-padding-top: 5%;
+
+    /* exception for non smooth scrolling settings */
+    @media (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
+}
+
+::selection {
+  background: color.adjust($color-primary, $lightness: -20%);
+  text-shadow: none;
+  color: $color-text-primary;
 }
 
 // grid 3 rows
 .body {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto; //  if no header and footer: grid-template-rows: auto;
   grid-template-columns: 100%;
   justify-items: center;
   align-items: center;
@@ -32,34 +46,19 @@ html {
 .header,
 .main {
   width: 100%;
+  background-color: transparent; // set your colors
 }
 //
-
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  @include mf-bp-rem('padding', (
-      xs: 15px,
-  ));
-  @include mf-bp-rem('gap', (
-      xs: 10px,
-      md: avg(10px, 20px),
-      xl: 20px
-  ));
-}
-
 
 .header,
 .footer {
   display: flex;
-  padding: rem(20px);
 
+  // change by your need
+  padding: rem(20px);
   @media screen and (min-width: $screen-md) {
     padding: rem(30px);
   }
-
   @media screen and (min-width: $screen-xl) {
     padding: rem(40px);
   }
@@ -67,10 +66,6 @@ html {
 
 .footer {
   justify-content: center;
-
-  &__container {
-    color: #ffffff;
-  }
 
   &__text-container {
     display: flex;
@@ -82,6 +77,25 @@ html {
   &__text {
     font-size: rem(13px);
     line-height: 1.3em;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    // change it by your needs
+    max-width: 80%;
+    row-gap: rem(50px);
+    padding: rem(30px);
   }
 }
 
@@ -101,22 +115,18 @@ html {
     @include event-opacity;
 }
 
+.btn {
+  user-select: none;
+  cursor: pointer;
+  @include event-opacity;
+}
+
 .icon {
     fill      : currentColor;
     transition: fill $animation-duration $animation;
 }
 
-::selection {
-    background: color.adjust($color-primary-1, $lightness: -20%);
-    text-shadow: none;
-    color: white;
-}
 
-.btn {
-    cursor: pointer;
-    user-select: none;
-    @include event-opacity;
-}
 
 
 
