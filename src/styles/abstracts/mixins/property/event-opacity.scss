@@ -1,9 +1,10 @@
 @use '@abstracts/variables/variables' as *;
 
-@mixin hover-opacity {
+@mixin event-opacity {
     transition: opacity $animation-duration $animation;
 
-    &:hover {
-        opacity: $opacity-hover;
+    &:is(:focus-visible, :hover) {
+      outline: none;
+      opacity: $opacity;
     }
 }

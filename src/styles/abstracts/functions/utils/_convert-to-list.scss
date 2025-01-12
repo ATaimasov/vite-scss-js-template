@@ -1,7 +1,7 @@
 @use "sass:list";
-@use "@scss-functions/values/px-to-rem" as *;
+@use "@scss-functions/values/rem" as *;
 @use '@scss-functions/utils/is-list' as *;
- 
+
    @function convert-to-list($values) {
     // Converts input data into a list
     // If the input is already a list, returns it unchanged
@@ -9,7 +9,7 @@
     @if not is-list($values) {
       @return $values;
     }
-    
+
     // If it is a list, process each value separately
     $result: ();
     @each $value in $values {
@@ -23,12 +23,12 @@
     // If the input is not a list, converts a single value to units
     // If it is a list, converts each element separately
     @if not is-list($values) {
-      @return px-to-rem($values);
+      @return rem($values);
     }
-    
+
     $result: ();
     @each $value in $values {
-      $result: list.append($result, px-to-rem($value));
+      $result: list.append($result, rem($value));
     }
     @return $result;
 }

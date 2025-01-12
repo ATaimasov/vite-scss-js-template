@@ -6,11 +6,11 @@
     /*
 
     &__import {
-        
+
         global import
         @use '@styles/global' as *;
 
-        local import 
+        local import
         e.g.
         @use '@abstracts/mixins/properties/mf-breakpoints-mixins' as *;
     }
@@ -85,16 +85,16 @@
         ));
 
             // 2.1
-            // if you need to calculate average value using calc function between mobile and desktop 
+            // if you need to calculate average value using calc function between mobile and desktop
             // mobile = initial value
             // tablet = $screen-md
-            // desktop = $screen-xl 
+            // desktop = $screen-xl
 
         @include average-for-tablet('width', 117.43px, 175.39px);
 
             // 2.2
             //  if you need to calculate average value using calc function between many breakpoints and values
-        @include avg-bp-multi(right, 
+        @include avg-bp-multi(right,
             79.69px, 'md', 'xl',
             159.04px, 'xl', 'xxl',
             277.04px, 'xxl', 'xxxl'
@@ -107,34 +107,34 @@
             min-width xxl (fake-calculation): average calc between 277.04px and 277.04px - it's need for proper working
             min-width xxxl: 277.04px
             */
-         
+
     }
 
     &__colors {
 
         // hex conversion
-        $color-main: #01579B;
+        $color-primary: #01579B;
 
         background-image: linear-gradient(
             to right,
-            hex-to-rgba($color-main, 1),
-            hex-to-rgba($color-main, 0)
+            hex-to-rgba($color-primary, 1),
+            hex-to-rgba($color-primary, 0)
         );
-        
+
     }
 
     &__values-conversion {
         // including above functions and mixins there a few more tools
 
-        // 1 
+        // 1
         // px to rem conversion
-        padding: px-to-rem(12px, 1%, 1rem, 12px); // =>     padding: 0.75rem 1% 1rem 0.75rem;
+        padding: rem(12px, 1%, 1rem, 12px); // =>     padding: 0.75rem 1% 1rem 0.75rem;
 
         // 2
         // px to percents conversion
         // second argument - screen size
-        width: px-to-percents(400px, 800px); // => 50%
+        width: percents(400px, 800px); // => 50%
     }
 
-    
+
 }

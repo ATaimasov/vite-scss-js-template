@@ -9,54 +9,80 @@
 @use '@base/state';
 
 html {
-    font-family: 'Montserrat', Arial, sans-serif;
-    scrollbar-color: hex-to-rgba($color-main, 0.9) color.adjust(white, $lightness: -10%);
-    scrollbar-width: thin;
+    font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
 }
 
 .html {
     font-style : normal;
     line-height: 1.2em;
-    @include mf-bp-rem('font-size', (
-        xs: $font-size-html * 0.8,
-        sm: $font-size-html * 0.9,
-        xl: $font-size-html,
-    ));
+    scrollbar-color: hex-to-rgba($color-primary-1, 0.9) color.adjust(white, $lightness: -10%);
+    scrollbar-width: thin;
 }
 
-// grid 3 rows start
+// grid 3 rows
 .body {
-    &--grid {
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-        grid-template-columns: 100%;
-        justify-items: center;
-        align-items: center;
-        min-height: 100vh;
-    }
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  justify-items: center;
+  align-items: center;
+  min-height: 100vh;
 }
 .footer,
 .header,
 .main {
-    &--grid {
-        width: 100%;
-    }
+  width: 100%;
 }
-// grid 3 rows end
+//
 
 .main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include mf-bp-rem('padding', (
+      xs: 15px,
+  ));
+  @include mf-bp-rem('gap', (
+      xs: 10px,
+      md: avg(10px, 20px),
+      xl: 20px
+  ));
+}
+
+
+.header,
+.footer {
+  display: flex;
+  padding: rem(20px);
+
+  @media screen and (min-width: $screen-md) {
+    padding: rem(30px);
+  }
+
+  @media screen and (min-width: $screen-xl) {
+    padding: rem(40px);
+  }
+}
+
+.footer {
+  justify-content: center;
+
+  &__container {
+    color: #ffffff;
+  }
+
+  &__text-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    @include mf-bp-rem('padding', (
-        xs: 15px,
-    ));
-    @include mf-bp-rem('gap', (
-        xs: 10px,
-        md: avg(10px, 20px),
-        xl: 20px
-    ));
+    justify-content: center;
+    padding: rem(5px);
+  }
+
+  &__text {
+    font-size: rem(13px);
+    line-height: 1.3em;
+  }
 }
 
 .img {
@@ -72,44 +98,16 @@ html {
 .link {
     text-decoration: none;
     cursor: pointer;
-    transition: opacity $animation-duration $animation;
-
-    &:is(:focus-visible, :hover) {
-        outline: none;
-        opacity: $opacity-hover;
-    }
+    @include event-opacity;
 }
 
 .icon {
-    fill      : white;
+    fill      : currentColor;
     transition: fill $animation-duration $animation;
-
-    @include mf-bp-rem('width', (
-        xs: 24px,
-        md: 36px,
-    ));
-    @include mf-bp-rem('height', (
-            xs: 24px,
-            md: 36px,
-    ));
-
-    &:hover {
-        fill: $color-link-hover;
-    }
-
-    svg {
-        transition: all $animation-duration $animation;
-        fill: сurrentColor;
-        
-
-        &:hover {
-            opacity: $opacity-hover;
-        }
-    }
 }
 
 ::selection {
-    background: color.adjust($color-main, $lightness: -20%);
+    background: color.adjust($color-primary-1, $lightness: -20%);
     text-shadow: none;
     color: white;
 }
@@ -117,9 +115,8 @@ html {
 .btn {
     cursor: pointer;
     user-select: none;
-    @include hover-opacity;
+    @include event-opacity;
 }
-
 
 
 

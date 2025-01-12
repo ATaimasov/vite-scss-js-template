@@ -1,15 +1,7 @@
 @use '@styles/global' as *;
 @use '@base/root' as *;
 
-// base components
-// that above root styles and global scss
-// components for all pages 
+// components for all pages
 @use '@scss-ui/copyrights';
 
-// custom properties start
-.footer {
-    background-color: $color-main;
-}
-.header {
-    background-color: $color-main;
-}
+
