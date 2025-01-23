@@ -47,15 +47,16 @@
 .header,
 .main {
   width: 100%;
-  background-color: transparent; // set your colors
+  background-color: transparent; //? set your colors
 }
 //
 
 .header,
 .footer {
   display: flex;
+  align-items: center;
 
-  // change by your need
+  //! delete or change
   padding: rem(20px);
   @media screen and (min-width: $screen-md) {
     padding: rem(30px);
@@ -65,9 +66,20 @@
   }
 }
 
+.header {
+  justify-content: center;
+  flex-direction: column;
+
+  @media screen and (min-width: $screen-sm) {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+
 .footer {
   justify-content: center;
 
+  //! delete or change
   &__text-container {
     display: flex;
     align-items: center;
@@ -93,10 +105,21 @@
     flex-direction: column;
     align-items: center;
 
-    // change it by your needs
+    //! delete or change
+    padding-top: rem(5px);
+    padding-bottom: rem(5px);
+    padding-right: rem(10px);
+    padding-left: rem(10px);
+    row-gap: rem(20px);
     max-width: 80%;
-    row-gap: rem(50px);
-    padding: rem(30px);
+
+    @media screen and (min-width: $screen-md) {
+      padding-top: rem(15px);
+      padding-bottom: rem(15px);
+      padding-right: rem(30px);
+      padding-left: rem(30px);
+      row-gap: rem(30px);
+    }
   }
 }
 

@@ -72,9 +72,8 @@ export default defineConfig({
 
       // assets
       "@assets": makeAlias("src/assets"),
-      "@images": makeAlias("src/assets/images"),
+      "@img": makeAlias("src/assets/img"),
       "@fonts": makeAlias("src/assets/fonts"),
-      "@svg": makeAlias("src/assets/svg"),
     },
   },
   css: {

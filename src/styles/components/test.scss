@@ -2,13 +2,21 @@
 
 .test {
   &__title {
-    font-size: rem(30px);
+    font-size: rem(20px);
+
+    @media screen and (min-width: $screen-md) {
+      font-size: rem(30px);
+    }
   }
 
   &__text {
-    font-size: rem(20px);
+    font-size: rem(15px);
     line-height: 1.3em;
     text-align: justify;
+
+    @media screen and (min-width: $screen-md) {
+      font-size: rem(20px);
+    }
   }
 
   &__images {
