@@ -1,12 +1,16 @@
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
 import { resolve } from "path"; // for rollup multi-page
+import { dirname } from 'node:path';
 
 import injectHTML from "vite-plugin-html-inject"; // component approach in html
 import { ViteMinifyPlugin } from "vite-plugin-minify"; // minify html in build
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer"; // optimize images requires plugins svgo and sharp
 import FullReload from "vite-plugin-full-reload"; // auto reload on changes
 
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 function makeAlias(relativePath) {
   return fileURLToPath(new URL(relativePath, import.meta.url));
 }
